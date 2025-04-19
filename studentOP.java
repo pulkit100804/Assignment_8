@@ -25,3 +25,14 @@ public class StudentOperations {
             }
         }
     }
+
+    public void searchStudent(int prn) throws StudentNotFoundException {
+        for (Student s : students) {
+            if (s.getPrn() == prn) {
+                System.out.println(s);
+                return;
+            }
+        }
+        throw new StudentNotFoundException("Student with PRN " + prn + " not found.");
+    }
+
