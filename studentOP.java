@@ -13,3 +13,15 @@ public class StudentOperations {
                 throw new DuplicatePRNException("Student with this PRN already exists.");
             }
         }
+       students.add(new Student(name, prn, batch));
+    }
+
+    public void displayStudents() {
+        if (students.isEmpty()) {
+            System.out.println("No student records found.");
+        } else {
+            for (Student s : students) {
+                System.out.println(s);
+            }
+        }
+    }
